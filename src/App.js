@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import classes from './assets/style.less';
-import bootstrap from './assets/bootstrap.less';
+import classes from './assets/styles/style.less';
+import bootstrap from './assets/styles/bootstrap.less';
+import Header from './Components/Header';
+import Users from './Components/Users';
+import InputAppend from './Components/inputAppend';
+import Comments from './Components/comments';
+import Acitvity from './Components/Activity/Activites';
 
 class App extends Component {
   render() {
     return (
-      <div className={classes.App}>
-        <header className={classes.header}>
-          <img src={logo} className={classes.logo} alt="logo" />
-          <h1 className={classes.title}>Welcome to React</h1>
-        </header>
-        <p className={[classes.red, classes.bold, classes.testH].join(' ')}>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="#" className={[bootstrap.btn, bootstrap.btnPrimary].join(' ')}>Primary</a>
+      <div className={bootstrap.container}>
+        <div className={bootstrap.row}>
+          <div className={bootstrap.colLg12}>
+            <div className={classes.App}>
+              <Header classes={bootstrap.clearfix} />
+              <Users />
+              <InputAppend />
+              <Comments />
+              <Acitvity />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
