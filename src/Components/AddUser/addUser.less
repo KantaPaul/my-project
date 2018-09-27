@@ -1,0 +1,67 @@
+.adduser-wraper {
+  position: relative;
+  margin-bottom: 22px;
+  .user-add-list {
+    position: absolute;
+    right: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    > li {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      &:hover {
+        &::before,
+        &::after {
+          opacity: 1;
+        }
+      }
+      &::before {
+        position: absolute;
+        content: attr(data-title);
+        width: 100px;
+        padding: 0.25rem 0.5rem;
+        color: #fff;
+        text-align: center;
+        background-color: #000;
+        border-radius: 0.25rem;
+        top: -30px;
+        left: -45px;
+        opacity: 0;
+        transition: all 0.4s ease;
+        pointer-events: none;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        border-width: .4rem .4rem 0;
+        border-color: transparent;
+        border-top-color: #000;
+        border-style: solid;
+        left: 0;
+        opacity: 0;
+        transition: all 0.4s ease;
+        pointer-events: none;
+      }
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+  .input-group-text {
+    background-color: transparent;
+    color: #525252;
+    font-size: 13px;
+    border-color: #1a9ed4;
+  }
+  .form-control {
+    border-left: 0px solid #000;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+    border-color: #1a9ed4;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
