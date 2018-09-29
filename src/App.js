@@ -4,6 +4,7 @@ import bootstrap from './assets/styles/framework/bootstrap.less';
 import classes from './assets/styles/style.less';
 import PageOne from './Pages/Pages1';
 import PageTwo from './Pages/Pages2';
+import Redirect from './Components/Redirect';
 
 let notFound = () => {
   return (
@@ -28,7 +29,7 @@ let Header = () => {
             <NavLink className={bootstrap.navLink} activeClassName={bootstrap.active} to="/page-two">Page Two</NavLink>
           </li>
           <li>
-            <NavLink className={bootstrap.navLink} activeClassName={bootstrap.active} to="/page-two">Page Two</NavLink>
+            <a className={bootstrap.navLink} target="_blank" href="https://github.com/KantaPaul/my-project">Project Code Git Repo</a>
           </li>
         </ul>
       </div>
