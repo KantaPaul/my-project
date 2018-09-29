@@ -70,11 +70,20 @@ class AddUser extends Component {
           </div>
           <input type="text" className={[bootstrap.formControl, classes.formControl].join(' ')} aria-label="Username" aria-describedby="basic-addon1" />
           <ul className={classes.userAddList}>
-            <li data-title="Add User" onClick={this.showUsers}><img src={require('../../assets/images/icons/person.png')} alt="person" /></li>
+            <li data-title="Add User" onClick={this.showUsers}>
+              <img src={require('../../assets/images/icons/person.png')} alt="person" className={classes.mainimage} />
+              <img src={require('../../assets/images/icons/person-hover.png')} alt="person" className={classes.hoverimage} />
+            </li>
 
-            <li data-title="Edit User"><img src={require('../../assets/images/icons/pencil.png')} alt="pencil" /></li>
+            <li data-title="Edit User">
+              <img src={require('../../assets/images/icons/pencil.png')} alt="pencil" className={classes.mainimage} />
+              <img src={require('../../assets/images/icons/pencil-hover.png')} alt="pencil" className={classes.hoverimage} />
+            </li>
 
-            <li data-title="Edit Date"><img src={require('../../assets/images/icons/calender.png')} alt="calendar" /></li>
+            <li data-title="Edit Date">
+              <img src={require('../../assets/images/icons/calender.png')} alt="calendar" className={classes.mainimage} />
+              <img src={require('../../assets/images/icons/calender-hover.png')} alt="calendar" className={classes.hoverimage} />
+            </li>
           </ul>
         </div>
         {person}

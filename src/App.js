@@ -1,34 +1,62 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 import bootstrap from './assets/styles/framework/bootstrap.less';
 import classes from './assets/styles/style.less';
-import Header from './Components/Header/Header';
-import Users from './Components/Users/Users';
-import InputAppend from './Components/Inputs/inputAppend';
-import Adduser from './Components/AddUser/addUser.js';
-import Comments from './Components/comments';
-import Acitvity from './Components/Activity/Activites';
+import PageOne from './Pages/Pages1';
+import PageTwo from './Pages/Pages2';
 
+let notFound = () => {
+  return (
+    <div className={[classes.notfound, bootstrap.textCenter].join(' ')}>
+      <h1 className={bootstrap.display3}>404 Not Found</h1>
+      <div className={bootstrap.btnGroup}>
+        <Link to="/" className={[bootstrap.btn, bootstrap.btnPrimary].join(' ')}>Go Home</Link>
+      </div>
+    </div>
+  )
+}
+
+let Header = () => {
+  return (
+    <div className={[bootstrap.navbar, bootstrap.navbarLight].join(' ')}>
+      <div className={bootstrap.container}>
+        <ul className={[bootstrap.nav, bootstrap.navPills].join(' ')}>
+          <li>
+            <NavLink className={bootstrap.navLink} exact to="/" activeClassName={bootstrap.active}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink className={bootstrap.navLink} activeClassName={bootstrap.active} to="/page-two">Page Two</NavLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
+}
 
 class App extends Component {
   render() {
     return (
-      <main className={classes.mainwraper}>
-        <div className={bootstrap.container}>
-          <div className={bootstrap.row}>
-            <div className={[bootstrap.colLg7, bootstrap.mxAuto].join(' ')}>
-              <div className={classes.App}>
-                <Header classes={bootstrap.clearfix} />
-                <Users classes={bootstrap.clearfix}/>
-                <InputAppend />
-                <Adduser />
-                <Comments />
-                <Acitvity />
+      <BrowserRouter>
+        <div>
+          <Header />
+          <main className={classes.mainwraper}>
+            <div className={bootstrap.container}>
+              <div className={bootstrap.row}>
+                <div className={[bootstrap.colLg7, bootstrap.mxAuto].join(' ')}>
+                  <div className={classes.App}>
+                    <Switch>
+                      <Route exact={true} path="/" component={PageOne} />
+                      <Route path="/page-two" component={PageTwo} />
+                      <Route component={notFound} />
+                    </Switch>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+            <div className={classes.bgOverlay}></div>
+          </main>
         </div>
-        <div className={classes.bgOverlay}></div>
-      </main>
+      </BrowserRouter>
     );
   }
 }

@@ -11,10 +11,23 @@
       display: inline-block;
       cursor: pointer;
       position: relative;
+      min-height: 15px;
+      .mainimage {
+        display: block;
+      }
+      .hoverimage {
+        display: none;
+      }
       &:hover {
         &::before,
         &::after {
           opacity: 1;
+        }
+        .hoverimage {
+          display: block;
+        }
+        .mainimage {
+          display: none;
         }
       }
       &::before {
@@ -24,23 +37,24 @@
         padding: 0.25rem 0.5rem;
         color: #fff;
         text-align: center;
-        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.71);
         border-radius: 0.25rem;
-        top: -30px;
+        top: -45px;
         left: -45px;
         opacity: 0;
         transition: all 0.4s ease;
         pointer-events: none;
+        z-index: 2;
       }
       &::after {
         position: absolute;
         content: "";
-        top: 0;
+        top: -13px;
         border-width: .4rem .4rem 0;
         border-color: transparent;
-        border-top-color: #000;
+        border-top-color: rgba(0, 0, 0, 0.71);
         border-style: solid;
-        left: 0;
+        left: -1px;
         opacity: 0;
         transition: all 0.4s ease;
         pointer-events: none;
