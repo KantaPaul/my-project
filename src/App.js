@@ -27,6 +27,9 @@ let Header = () => {
           <li>
             <NavLink className={bootstrap.navLink} activeClassName={bootstrap.active} to="/page-two">Page Two</NavLink>
           </li>
+          <li>
+            <NavLink className={bootstrap.navLink} activeClassName={bootstrap.active} to="/page-two">Page Two</NavLink>
+          </li>
         </ul>
       </div>
     </div>
