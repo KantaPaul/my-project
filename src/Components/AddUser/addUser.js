@@ -65,10 +65,7 @@ class AddUser extends Component {
     return (
       <div className={classes.adduserWraper}>
         <div className={bootstrap.inputGroup}>
-          <div className={bootstrap.inputGroupPrepend}>
-            <span className={[bootstrap.inputGroupText, classes.inputGroupText].join(' ')} id="basic-addon1">Dokan Theme De</span>
-          </div>
-          <input type="text" className={[bootstrap.formControl, classes.formControl].join(' ')} aria-label="Username" aria-describedby="basic-addon1" />
+          <input type="text" placeholder="Dokan Theme De" className={[bootstrap.formControl, classes.formControl].join(' ')} aria-label="Username" aria-describedby="basic-addon1" />
           <ul className={classes.userAddList}>
             <li data-title="Add User" onClick={this.showUsers}>
               <img src={require('../../assets/images/icons/person.png')} alt="person" className={classes.mainimage} />

@@ -4,7 +4,7 @@ import bootstrap from './assets/styles/framework/bootstrap.less';
 import classes from './assets/styles/style.less';
 import PageOne from './Pages/Pages1';
 import PageTwo from './Pages/Pages2';
-import Redirect from './Components/Redirect';
+import PageThree from './Pages/Pages3';
 
 let notFound = () => {
   return (
@@ -29,6 +29,9 @@ let Header = () => {
             <NavLink className={bootstrap.navLink} activeClassName={bootstrap.active} to="/page-two">Page Two</NavLink>
           </li>
           <li>
+            <NavLink className={bootstrap.navLink} activeClassName={bootstrap.active} to="/page-three">Page Three</NavLink>
+          </li>
+          <li>
             <a className={bootstrap.navLink} target="_blank" href="https://github.com/KantaPaul/my-project">Project Code Git Repo</a>
           </li>
         </ul>
@@ -51,6 +54,7 @@ class App extends Component {
                     <Switch>
                       <Route exact={true} path="/" component={PageOne} />
                       <Route path="/page-two" component={PageTwo} />
+                      <Route path="/page-three" component={PageThree} />
                       <Route component={notFound} />
                     </Switch>
                   </div>
