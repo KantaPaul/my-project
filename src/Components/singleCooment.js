@@ -16,6 +16,7 @@ let singleComment = (props) => {
         <p>Lorem Ipsum is simply dummy text of the <br/> printing and typesetting industry.</p>
         <a href="$" className={comment.commentLink}>Reply</a>
       </div>
+      <img src={require('../assets/images/icons/angle.png')} alt="angle" className={comment.angleicon} />
     </div>
   )
 }
